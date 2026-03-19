@@ -20,19 +20,19 @@ html {
 :root {
   /* --- ベースカラー --- */
   --color-bg-base: #FDF7EF;      /* メイン背景（薄いベージュ） */
-  // var(--color-bg-base)
+   /* var(--color-bg-base) */
   --color-text-main: #444444;    /* 基本の文字色 */
-  // var(--color-text-main)
+  /* var(--color-text-main) */
 
   /* --- メイン・アクセントカラー --- */
   --color-green: #8DA47E;        /* 背景、ボタン、Menu見出し */
-  // var(--color-green)
+  /* var(--color-green) */
   --color-pet-yellow: #FFDF86;   /* ペットセクション背景、Menuボタン */
-  // var(--color-pet-yellow)
+  /* var(--color-pet-yellow) */
   --color-accent-orange: #ECAE6C;/* ボタン、線、強調アクセント */
-  // var(--color-accent-orange)
-  --color-sub-beige: #ECD3B4;    /* Concept背景*/}
-  // var(--color-sub-beige)
+  /* var(--color-accent-orange) */
+  --color-sub-beige: #ECD3B4;    /* Concept背景*/
+  /* var(--color-sub-beige) */
 
 
 
