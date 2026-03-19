@@ -1,0 +1,113 @@
+.news {
+  width: 100%;
+  background-color: var(--color-green);
+padding-bottom: 80px;  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: 80px;
+}
+
+// 枝ーーーーーーーーーーーーーーーーーーーーーーーー
+.branchLeft,
+.branchRight {
+  position: absolute;
+  width: clamp(250px, 30vw, 600px);
+  height: clamp(250px, 30vw, 600px);
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.branchLeft {
+  left: 0;
+  bottom: 3%;
+  background-image: url("/Products/illust/tree1.png");
+  background-position: left bottom;
+}
+
+.branchRight {
+  right: 0;
+  top: 10%;
+  background-image: url("/Products/illust/tree2.png");
+  background-position: right top;
+}
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+.pageTitle {
+  font-size: clamp(40px, 10vw, 60px);
+  color: #ffffff;
+  font-weight: normal;
+  margin-bottom: clamp(24px, 4vw, 40px);
+  width: 90%;
+  max-width: 800px;
+  align-self: center;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+
+  @media (max-width: 768px) {
+    margin-bottom: 16px;
+  }
+}
+
+.list {
+  width: 70%;
+  max-width: 800px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+    @media (max-width: 768px) {
+  width: 90%;
+  }
+
+}
+
+.item {
+  background-color: var(--color-bg-base);
+  border-radius: 12px;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(10px, 4vw, 40px);
+  transition: opacity 0.3s;
+  overflow: hidden;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 600px) {
+    padding: 16px 20px;
+  }
+}
+
+.date {
+  font-size: 14px;
+  color: var(--color-text-main);
+  flex-shrink: 0;
+}
+
+.text {
+  font-size: 14px;
+  color: var(--color-text-main);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.buttonContainer {
+  margin-top: clamp(40px, 6vw, 60px);
+  position: relative;
+  z-index: 2;
+}

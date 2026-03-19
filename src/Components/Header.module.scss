@@ -1,0 +1,205 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background: var(--color-bg-base);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+  transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
+  transform: translateY(0);
+
+  &.hide {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+// トップページのヘッダー
+.topHeader {
+  background-color: var(--color-bg-base);
+}
+
+// その他のページのヘッダー
+.subHeader {
+  background-color: var(--color-green);
+  
+  .inner .list .ListItem .linkButton {
+    color: var(--color-bg-base); 
+  }
+  
+  .menuButton span {
+    background: var(--color-bg-base);
+  }
+}
+
+.inner {
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.logoArea {
+  position: relative;
+  width: 150px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logoImg {
+  position: absolute;
+  left: 0;
+  width: 150px;
+  display: block;
+  transition: opacity 0.4s ease;
+  
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// PC用ナビゲーションーーーーーーーーーーーーーーーーーーーーーーーーー
+.list {
+  display: flex;
+  gap: 24px;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.ListItem {
+  .linkButton {
+    color: var(--color-text-main);     
+    font-weight: bold;
+    font-size: 14px;
+    transition: color 0.3s; 
+
+    &:hover {
+      color: var(--color-accent-orange);  
+    }
+  }
+}
+
+// ハンバーガーボタンーーーーーーーーーーーーーーーーーーー
+.menuButton {
+  width: 32px;
+  height: 24px;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1200;
+
+  span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--color-accent-orange);
+    transition: 0.3s;
+  }
+
+  span:nth-child(1) { top: 0; }
+  span:nth-child(2) { top: 10px; }
+  span:nth-child(3) { top: 20px; }
+}
+
+.menuButton.open {
+  span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 10px;
+  }
+  span:nth-child(2) {
+    opacity: 0;
+  }
+  span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 10px;
+  }
+}
+
+.menuButton {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+// スマホ用メニュー・オーバーレイーーーーーーーーーーーーーーーーーーーーーーー
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 1000;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* スライドメニュー本体 */
+.mobileNav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 100vh;
+  background: var(--color-bg-base);
+  padding: 100px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 1100;
+
+  .linkButton {
+    color: var(--color-text-main);    
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--color-accent-orange);    
+    }
+  }
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  display: block;
+  width: 100%;
+  text-align: left; 
+}

@@ -1,0 +1,160 @@
+.categoryContent {
+  width: 100%;
+}
+
+.categoryTitle {
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  padding-left: 1.2rem;
+  border-left: 0.6rem solid var(--color-accent-orange);
+  border-bottom: 0.1rem solid var(--color-accent-orange);
+}
+
+.borderBox {
+  position: relative;
+  padding-top: 8rem;
+  @media (max-width: 600px) { padding: 6rem 1.5rem 4rem; }
+}
+.boxLabel {
+  position: absolute;
+  top: 2.5rem;
+  left: 3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.subSectionLabel {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-top: 6rem;
+  padding-left: 1rem;
+}
+
+.divider {
+  border-top: 1px dashed color-mix(in srgb, var(--color-accent-orange), transparent 50%);
+  margin: 1rem 0 4rem;
+}
+
+.fairGrid,
+.grandMenuGrid {
+  display: grid;
+  gap: 4rem 2.5rem;
+  justify-items: center;
+}
+
+.fairGrid {
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  max-width: 100rem;
+  margin: 0 auto;
+
+  .card {
+    max-width: 45rem;
+    
+    .info .itemTitle {
+      font-size: 1.8rem;
+    }
+    
+    .priceRow {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    .card { max-width: 100%; }
+  }
+}
+
+.grandMenuGrid {
+  grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 600px) { grid-template-columns: 1fr; }
+}
+
+.washokuCommitment {
+  background-color: var(--color-bg-base);
+  padding: 3rem;
+  border-radius: 1rem;
+  margin: 4rem 0 8rem;
+
+  .commitmentTitle {
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-green);
+    text-align: left;
+  }
+
+  .commitmentText {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .commitmentNote {
+    font-size: 1.4rem;
+    opacity: 0.8;
+    text-align: left;
+    line-height: 1.8;
+
+  }
+}
+
+.card {
+  width: 100%;
+  max-width: 32rem;
+  text-align: left;
+
+  .mainImageWrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  }
+
+  .info {
+    .itemTitle {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-top: 0.4rem;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .singlePrice {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: right;
+      display: block;
+    }
+  }
+}
+
+.priceList {
+  width: 100%;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.priceRow {
+  display: flex;
+  padding-right: 1.2rem;
+  justify-content: end;
+  gap: 3rem;
+  align-items: baseline;
+  font-size: 1.6rem;
+}
+
+.priceLabel .priceValue {
+  color: var(--color-text-main);
+}
+
+.onlyTeishoku{
+text-align: end;
+padding-right: 1.2rem;
+font-size: 1.2rem;
+}

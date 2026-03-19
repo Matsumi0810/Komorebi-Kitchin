@@ -1,0 +1,145 @@
+.container {
+  background-color: #ffffff;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: clamp(60px, 8vw, 100px) 5%;
+  position: relative;
+}
+
+// 右端のインスタ表示ーーーーーーーーーーーーーーー
+.floatingInsta {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  z-index: 100;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: auto;
+
+  &.hide {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    right: 15px;
+    bottom: 90px;
+  }
+}
+
+.headerArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: clamp(40px, 6vw, 80px);
+}
+
+.pageTitle {
+    font-family: Yusei Magic;
+      font-size: clamp(32px, 5vw, 48px);
+  color: var(--color-green); 
+}
+
+.filterWrapper {
+  position: absolute;
+  right: 0;
+  
+  .select {
+    padding: 6px 30px 6px 12px;
+    font-size: 14px;
+    border: 1px solid var(--color-green);
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    color: var(--color-text-main);
+    appearance: none;
+    outline: none;
+  }
+
+  &::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-right: 1px solid var(--color-green);
+    border-bottom: 1px solid var(--color-green);
+    position: absolute;
+    right: 12px;
+    top: 40%;
+    transform: translateY(-50%) rotate(45deg);
+    pointer-events: none;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  gap: 40px;
+  padding: 40px 0;
+  border-bottom: 2px dotted var(--color-green); 
+
+  &:first-child {
+    border-top: 2px dotted var(--color-green);
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.meta {
+  flex-shrink: 0;
+  .date {
+    font-size: 14px;
+    color: var(--color-text-main);
+    font-family: serif;
+  }
+}
+
+.content {
+  flex: 1;
+  
+  .itemTitle {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--color-text-main);
+    line-height: 1.4;
+  }
+
+  .body {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-text-main);
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.itemButtonArea {
+  margin-top: 24px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.instaArea {
+  margin-top: 100px;
+  text-align: center;
+}

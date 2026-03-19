@@ -1,0 +1,194 @@
+.footer {
+  width: 100%;
+  background-color: var(--color-bg-base);
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.inner {
+  width: 90%;
+  max-width: 1290px;
+  background-color: #fff;
+  border: 2px dashed color-mix(in srgb, var(--color-accent-orange), transparent 50%);
+  border-radius: 40px;
+  padding: 100px 40px 40px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 2fr;
+  grid-template-areas: "nav info map";
+  gap: 40px;
+  margin-bottom: 60px;
+
+  @media (max-width: 1130px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "nav info"
+      "map map";
+    gap: 50px 30px;
+    padding: 100px 80px 40px;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nav"
+      "info"
+      "map";
+    padding: 100px 40px 40px;
+    justify-items: center;
+  }
+  @media (max-width: 480px) {
+    padding: 80px 20px 40px;
+  }
+}
+
+.nav {
+  grid-area: nav;
+  width: 100%;
+  max-width: 200px;
+  justify-self: center;
+}
+
+.shopInfo {
+  grid-area: info;
+  width: 100%;
+  max-width: 320px;
+  justify-self: center;
+}
+
+/* Google Map --------------------------------------- */
+.map {
+  grid-area: map;
+  width: 100%;
+  max-width: none;
+
+  iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    filter: grayscale(0.2);
+    display: block;
+  }
+
+  @media (min-width: 1131px) {
+    max-width: 500px;
+    justify-self: end;
+  }
+}
+
+/* ロゴ-------------------------------------------- */
+.logo {
+  position: absolute;
+  top: -30px; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  
+  img {
+    width: clamp(180px, 20vw, 220px);
+    height: auto;
+    border-radius: 10px;
+  }
+
+  @media (min-width: 768px) {
+    top: -45px;
+    
+    img {
+      width: 250px;
+    }
+  }
+}
+
+/* ナビゲーション --------------------------------*/
+.navList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .listItem {
+    .linkButton {
+      background: none;
+      border: none;
+      padding: 0;
+      color: var(--color-text-main);
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: opacity 0.3s;
+
+      &::before {
+        content: "▶";
+        font-size: 10px;
+        margin-right: 8px;
+        color: var(--color-text-main);
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+/* 店舗情報 --------------------------------- */
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 2px dashed color-mix(in srgb, var(--color-accent-orange), transparent 50%);
+  padding-bottom: 8px;
+  gap: 15px;
+
+  .label {
+    background-color: var(--color-accent-orange);
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    min-width: 70px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .value {
+    font-size: 13px;
+    color: var(--color-text-main);
+    line-height: 1.6;
+    margin: 0;
+    text-align: start;
+  }
+}
+
+/* コピーライト ーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+.copyright {
+  margin-top: 40px;
+  font-size: 12px;
+  background-color: var(--color-green);
+  color: #FFFFFF;
+  text-align: center;
+  width: 100vw; 
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    margin: 0;
+  }
+}

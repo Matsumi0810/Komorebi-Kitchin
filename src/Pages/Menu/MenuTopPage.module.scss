@@ -1,0 +1,166 @@
+.container {
+  background-color: var(--color-bg-base);
+  min-height: 100vh;
+  padding: 80px 0;
+}
+
+.headerArea {
+  text-align: center;
+  padding: clamp(40px, 10vw, 60px) 5% 80px;
+}
+
+.pageTitle {
+  font-family: 'Yusei Magic', sans-serif;
+  font-size: clamp(32px, 5vw, 48px);
+  color: var(--color-green);
+  margin: 0;
+}
+
+.menuGrid {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+
+  .menuCard {
+    position: relative;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+    color: #fff;
+    text-decoration: none;
+    grid-column: span 2;
+
+    &.large {
+      grid-column: span 3;
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+    
+    .menuCard {
+      grid-column: span 1;
+      height: 180px;
+    }
+
+    .menuCard.large {
+      grid-column: span 2;
+      height: 250px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    
+    .menuCard {
+      grid-column: span 1;
+      height: 160px;
+    }
+
+    .menuCard.large {
+      grid-column: span 1;
+      height: 220px;
+
+      .catTitle {
+        font-size: 2.6rem;
+      }
+    }
+  }
+}
+
+.sliderWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.sliderInner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.slideItem {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.cardContent {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.catTitle {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.catSub {
+  font-size: 1.3rem;
+  color: var(--color-pet-yellow);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.catNote {
+  font-size: 1.2rem;
+  margin-top: 8px;
+  opacity: 0.9;
+  line-height: 1.5;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+.allergyNote {
+  max-width: 700px;
+  margin: 80px auto 0;
+  padding: 40px;
+  border: 1px solid var(--color-sub-beige);
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: center;
+
+  @media (max-width: 640px) {
+    margin: 60px 5% 0;
+    padding: 30px 20px;
+  }
+}
+
+.allergyTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-text-main);
+  margin-bottom: 20px;
+}
+
+.allergyText {
+  font-size: 1.3rem;
+  line-height: 2.0;
+  color: var(--color-text-main);
+  text-align: left;
+  display: inline-block;
+}

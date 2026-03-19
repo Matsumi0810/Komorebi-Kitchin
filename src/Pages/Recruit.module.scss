@@ -1,0 +1,19 @@
+
+.container {
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+.mainVisual {
+  text-align: center;
+  padding: clamp(6rem, 10vw, 10rem) 5% 4rem;
+}
+
+.pageTitle {
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  color: var(--color-green);
+  font-family: 'Yusei Magic', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-top: 80px;
+}

@@ -1,0 +1,64 @@
+$bp: 48rem;
+
+.recruitSection {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 5% 8rem;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+  margin-bottom: 6rem;
+}
+
+.recruitList {
+  display: flex;
+  flex-direction: column;
+}
+
+.recruitItem {
+  display: flex;
+  padding: 4rem 0;
+  border-bottom: 2px dashed color-mix(in srgb, var(--color-green), transparent 50%);
+  opacity: 0.8;
+
+  &:first-child {
+  border-top: 2px dashed color-mix(in srgb, var(--color-green), transparent 50%);
+      opacity: 0.8;
+
+  }
+
+  @media (max-width: $bp) {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 3rem 0;
+  }
+}
+
+.label {
+  width: 20rem;
+  flex-shrink: 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--color-text-main);
+
+  @media (max-width: $bp) {
+    width: 100%;
+  }
+}
+
+.value {
+  flex: 1;
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: var(--color-text-main);
+  white-space: pre-wrap;
+
+  @media (max-width: $bp) {
+    width: 100%;
+  }
+}

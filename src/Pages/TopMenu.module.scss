@@ -1,0 +1,377 @@
+.menu {
+  width: 100%;
+  padding: clamp(60px, 8vw, 100px) 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-bg-base);
+  scroll-margin-top: 80px;
+}
+
+.pageTitle {
+  font-size: clamp(40px, 10vw, 60px);
+  color: var(--color-text-main);
+  font-weight: 500;
+  margin-bottom: clamp(24px, 4vw, 40px);
+  width: 90%;
+  max-width: 1200px;
+  text-align: left;
+    opacity: 0.8;
+
+}
+
+.morning, .lunch, .dessert {
+  width: 90%;
+  max-width: 1200px;
+  margin-bottom: clamp(60px, 10vw, 100px);
+}
+
+.sectionTtlWrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  margin: 0 0 4px 8px;
+}
+
+.sectionTtl {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-text-main);
+}
+
+.oderTime {
+  font-size: 14px;
+  color: var(--color-text-main);
+}
+
+/* --- コンテナ共通 --- */
+.morningContainer, .lunchContainer, .dessertContainer {
+  background-color: #fff;
+  border: 2px dashed color-mix(in srgb, var(--color-accent-orange), transparent 50%);
+  border-radius: 20px;
+  padding: clamp(20px, 4vw, 50px);
+  padding-bottom: 40px;
+}
+
+/* --- モーニング：メイン構成 --- */
+.morningContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 2vw, 24px);
+  @media (max-width: 1040px) { flex-direction: column; gap: 40px; }
+}
+
+.mainItem {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.plusWrapper {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img { width: clamp(24px, 3.5vw, 44px); height: auto; }
+}
+
+.morningRightContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  min-width: 0;
+  max-width: 480px;
+}
+
+.sideItemsFlex {
+  display: flex;
+  gap: clamp(8px, 1.5vw, 20px);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.morningInfoArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(15px, 4vw, 30px);
+  width: 100%;
+  @media (max-width: 540px) { flex-direction: column; text-align: center; }
+}
+
+.okawariGraphic {
+  img { width: 150px; height: auto; }
+}
+
+.morningText .catchText {
+  font-size: clamp(13px, 1.8vw, 16px);
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: var(--color-text-main);
+}
+
+.okawari {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  p { font-size: 13px; color: var(--color-text-main); }
+  @media (max-width: 540px) { flex-direction: column; }
+}
+
+/* --- ランチ・デザート：グループ配置 --- */
+.lunchContainer, .dessertContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+
+.lunchNormalArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(20px, 5vw, 60px);
+  @media (max-width: 1040px) { flex-direction: column; }
+}
+
+/* メイングループ */
+.mainGroup {
+  display: flex;
+  gap: clamp(24px, 2.5vw, 30px);
+  align-items: flex-start;
+
+  @media (max-width: 630px) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .card {
+    width: clamp(160px, 22vw, 180px) !important; 
+    
+    @media (max-width: 630px) {
+      width: 80% !important; 
+      max-width: 280px;
+    }
+
+    .imageBox {
+      aspect-ratio: 1.2 / 1; 
+      border-radius: 15px 15px 0 0;
+    }
+
+    .cardTitle {
+      font-size: 16px;
+      padding: 10px;
+    }
+  }
+}
+
+/* サイドグループ */
+.sideGroup {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  
+.card {
+    width: 120px !important; 
+    
+    .imageBox {
+      aspect-ratio: 1.4 / 1;
+    }
+
+    .cardTitle {
+      font-size: 13px;
+      padding: 7px;    
+    }
+  }
+}
+
+.dessertNormalArea {
+  display: flex;
+  justify-content: center;
+  gap: clamp(24px, 2.5vw, 30px); 
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: clamp(170px, 22vw, 190px) !important; 
+    
+    @media (max-width: 630px) {
+      width: 80% !important; 
+      max-width: 250px;
+      margin-bottom: 16px;
+    }
+
+    .imageBox {
+      aspect-ratio: 1.2 / 1; 
+      border-radius: 15px 15px 0 0;
+    }
+
+    .cardTitle {
+      font-size: 16px;
+      padding: 10px;
+    }
+  }
+}
+.innerButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.recommendContainer, .fairSection { width: 100%; }
+.subTtl { font-size: 18px; margin-bottom: 20px; color: var(--color-text-main); }
+
+.fairFlex {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+  border-bottom: 2px dashed color-mix(in srgb, var(--color-accent-orange), transparent 50%);
+
+  @media (max-width: 768px) { flex-direction: column; align-items: center; }
+}
+
+/* --- カードスタイル --- */
+.card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  .imageBox {
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    img { width: 100%; height: 100%; object-fit: cover; }
+  }
+  .cardTitle {
+    background-color: var(--color-pet-yellow);
+    color: var(--color-text-main);
+    padding: 6px;
+    border-radius: 0 0 12px 12px;
+    font-size: 12px;
+    min-height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &.xl { width: clamp(200px, 25vw, 240px); .imageBox { aspect-ratio: 1/1; } }
+  &:not(.xl) {
+    width: 100px;
+    .imageBox {
+      aspect-ratio: 1.4 / 1;
+    }}
+}
+
+/* --- フェアカード共通 --- */
+.fairCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  .imageBox {
+    width: 100%;
+    border-radius: 0 !important;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 8px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
+
+/* --- ランチ用（横長 16:9） --- */
+.lunchType {
+ .imageBox {
+    aspect-ratio: 16 / 9 !important;
+    img {
+      object-fit: contain;
+    }
+  }
+  .content {
+    .itemTitle { font-size: clamp(14px, 2vw, 18px); }
+  }
+}
+
+/* --- デザート用（縦長 9:16） --- */
+.dessertType {
+.imageBox {
+    width: 100%;
+    aspect-ratio: 9 / 16 !important; 
+    border-radius: 0 !important;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  .content {
+    .itemTitle { font-size: clamp(14px, 2vw, 18px); }
+    .price { font-size: clamp(13px, 1.8vw, 15px); }
+  }
+}
+/* スライダー全体の調整 */
+.fairSwiper {
+  width: 100%;
+  padding-bottom: 20px !important;
+
+  position: relative;
+  overflow: hidden !important; 
+
+  :global(.swiper-button-next),
+  :global(.swiper-button-prev) {
+    color: var( --color-accent-orange) !important;
+    
+    &::after {
+      font-size: 24px; 
+    }
+  }
+}
+
+.fairSwiperWrapper {
+  width: 100%;
+  padding-bottom: 40px;
+  border-bottom: 2px dashed color-mix(in srgb, var(--color-accent-orange), transparent 50%);
+}
+
+.customPagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.bulletActive {
+  background: var(--color-accent-orange);
+}
+
+
+.wave{
+  position: relative;
+  top: 10px;
+}

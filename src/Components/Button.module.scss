@@ -1,0 +1,28 @@
+.btn {
+  width: fit-content;
+  min-width: 120px;
+  
+  padding: 8px 16px;
+  
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.orange {
+  background-color:var(--color-accent-orange);
+}
+
+.green {
+  background-color:var(--color-green);
+}

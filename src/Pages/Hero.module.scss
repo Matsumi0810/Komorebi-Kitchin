@@ -1,0 +1,20 @@
+.hero {
+  width: 100%;
+  height: calc(80vh - 80px);
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.heroImg {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: calc(80vh - 80px);
+  background-image: url("/Products/shop1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -10;
+}

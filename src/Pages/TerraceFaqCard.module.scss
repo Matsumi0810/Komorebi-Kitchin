@@ -1,0 +1,37 @@
+.faqCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.questionBox {
+  background-color: var(--color-green);
+  padding: 12px 20px;
+  text-align: center;
+}
+
+.questionText {
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.answerBox {
+  background-color: #ffffff;
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.answerText {
+  color: var(--color-text-main);
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+  white-space: pre-wrap;
+}

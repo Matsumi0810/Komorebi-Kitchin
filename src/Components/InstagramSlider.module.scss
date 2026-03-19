@@ -1,0 +1,19 @@
+.sliderWrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.mySwiper {
+  width: 100%;
+
+  :global(.swiper-wrapper) {
+    transition-timing-function: linear !important;
+  }
+}
+
+.slideImage {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}

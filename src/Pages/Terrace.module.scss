@@ -1,0 +1,225 @@
+// 女の子が画面を左右に往復するアニメーション
+@keyframes walkAcross {
+  0% {
+    left: 0%;
+    transform: scaleX(-1);
+  }
+  45% {
+    left: calc(100% - 150px);
+    transform: scaleX(-1);
+  }
+  50% {
+    left: calc(100% - 150px);
+    transform: scaleX(1);
+  }
+  95% {
+    left: 0%;
+    transform: scaleX(1);
+  }
+  100% {
+    left: 0%;
+    transform: scaleX(-1);
+  }
+}
+
+// 女の子がひょこひょこ揺れるアニメーション
+@keyframes yure {
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg); 
+  }
+  25% { 
+    transform: translateY(-3px) rotate(-3deg); 
+  }
+  50% { 
+    transform: translateY(0) rotate(0deg); 
+  }
+  75% { 
+    transform: translateY(-3px) rotate(3deg); 
+  }
+}
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+.terrace {
+  width: 100%;
+  background-color: var(--color-pet-yellow);
+  padding: 0 0 clamp(40px, 8vw, 80px); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-margin-top: 100px;
+}
+
+.pageTitle {
+  width: 90%;
+  max-width: 1200px;
+  font-size: clamp(40px, 10vw, 60px);
+  color: var(--color-text-main);
+  font-weight: 500;
+  margin-top: clamp(10px, 4vw, 20px);
+  margin-bottom: clamp(10px, 4vw, 20px); 
+  line-height: 1;
+  text-align: left;
+    opacity: 0.8;
+
+}
+
+.terraceInner {
+  width: 90%;
+  max-width: 1200px;
+  background-color: var(--color-bg-base);
+  border-radius: 40px; 
+  padding: clamp(30px, 5vw, 80px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 8vw, 60px);
+  position: relative;
+  overflow: hidden;
+}
+
+
+// イントロと写真
+.introContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  border-bottom: 2px dashed color-mix(in srgb, var(--color-accent-orange), transparent 50%);
+  position: relative;
+  padding-bottom: 40px;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
+}
+
+.textContent {
+  flex: 1;
+  .introTitle {
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: bold;
+    color: var(--color-text-main);
+    margin-bottom: 20px;
+  }
+  .introText {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-text-main);
+  }
+}
+
+.mainVisual {
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    @media (max-width: 1000px) {
+      max-width: 400px;
+      margin-bottom: 60px;
+    }
+  }
+}
+
+// 女の子が歩くイラスト装飾ーーーーーーーーーーーーーーーーーーー
+.walkContainer {
+  position: absolute;
+  left: 0;
+  bottom: -60px;
+  width: 150px;
+  height: 150px;
+  z-index: 3;
+  animation: walkAcross 40s linear infinite;
+  pointer-events: none;
+
+  @media (max-width: 768px) {
+    width: 130px;
+    height: 130px;
+    bottom: -60px;
+  }
+}
+
+.walkIllustration {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("/Products/illust/illust2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: yure 1.5s ease-in-out infinite;
+}
+
+/* よくある質問---------------------------------- */
+.Faq {
+  text-align: center;
+  & > p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: var(--color-text-main);
+  }
+}
+
+.faqWrapper {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.dogLeft, .dogRight {
+  position: absolute;
+  width: clamp(120px, 15vw, 200px);
+  height: clamp(120px, 15vw, 200px);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+  pointer-events: none;
+  
+  bottom: -160px; 
+
+  @media (max-width: 900px) {
+    bottom: -150px;
+  }
+}
+
+.dogLeft {
+  left: -2vw; 
+  background-image: url("/Products/illust/illust1.png");
+  transform: scaleX(-1);
+}
+
+.dogRight {
+  right: -5vw;
+  background-image: url("/Products/illust/illust6.png");
+  width: clamp(70px, 12vw, 130px);
+  height: clamp(70px, 12vw, 130px);
+}
+
+.faqGrid {
+  margin: 0 auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+
+  @media (max-width: 1000px) {
+    width: 90%;
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.insta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}

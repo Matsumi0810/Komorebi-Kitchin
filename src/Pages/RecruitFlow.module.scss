@@ -1,0 +1,113 @@
+$bp-sp: 48rem;
+
+.flowSection {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 5% 10rem;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+  margin-bottom: 6rem;
+}
+
+.flowList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// ステップーーーーーーーーーーーーーーーーーーー
+.flowItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepCard {
+border: 2px solid color-mix(in srgb, var(--color-green), transparent 50%);  
+border-radius: 1rem;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.stepHead {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: clamp(2.5rem, 4vw, 3.5rem) clamp(2.5rem, 5vw, 4rem);
+}
+
+.stepImg {
+  width: 6.4rem;
+  height: 6.4rem;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.stepTitle {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+  margin: 0;
+}
+
+// 本文
+.stepBody {
+  padding: 0 clamp(10rem, 5vw, 12rem) clamp(2.5rem, 4vw, 3.5rem);
+  padding-top: 2rem;
+
+  @media (max-width: $bp-sp) {
+    padding: 0 clamp(4rem, 5vw, 6rem) clamp(2.5rem, 4vw, 3.5rem);
+    padding-top: 2rem;
+  }
+}
+
+.contentBlock {
+  & + & {
+    margin-top: 1.5rem;
+  }
+}
+
+.blockText {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: var(--color-text-main);
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+.blockHeading {
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1.6;
+  color: var(--color-text-main);
+  margin: 0 0 0.5rem;
+}
+
+.blockBody {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: var(--color-text-main);
+  white-space: pre-wrap;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+// ▽矢印ーーーーーーーーーーーーーーーーーーーーーー
+.arrow {
+  width: 0;
+  height: 0;
+  margin: 3rem auto;
+  border-left: 3rem solid transparent;
+  border-right: 3rem solid transparent;
+  border-top: 3.4rem solid var(--color-green);
+}

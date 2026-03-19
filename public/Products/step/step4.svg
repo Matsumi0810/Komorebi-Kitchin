@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        fill: #8da47e;
+      }
+
+      .cls-3 {
+        font-size: 230px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #fdf7ef;
+        font-family: Phosphate-Inline, Phosphate;
+      }
+
+      .cls-5 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-4 {
+        font-size: 150px;
+      }
+
+      .cls-6 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <circle class="cls-2" cx="249.98" cy="252.63" r="242.12"/>
+  <text class="cls-4" transform="translate(107.49 210.57)"><tspan class="cls-5" x="0" y="0">S</tspan><tspan class="cls-1" x="60.75" y="0">TEP</tspan></text>
+  <text class="cls-3" transform="translate(130.75 410.75)"><tspan class="cls-6" x="0" y="0">0</tspan><tspan x="130.64" y="0">4</tspan></text>
+</svg>
