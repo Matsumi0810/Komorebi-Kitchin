@@ -22,23 +22,13 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  gap: 10px;
   margin: 0 15px;
-  transition: opacity 0.5s ease;
-
-  img {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    display: block;
-    border-radius: 0;
-  }
 }
 
 @media (max-width: 768px) {
   .floatingArea {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
       "insta . ."
       "banner banner top";
     grid-template-columns: 60px 1fr 60px;
@@ -57,11 +47,7 @@
   .bannerWrapper {
     grid-area: banner;
     margin: 0;
-    gap: 5px;
-    
-    img {
-      max-width: none;
-    }
+    padding-top: 10px; // バツボタンのスペース確保
   }
 
   .topBtnWrapper {

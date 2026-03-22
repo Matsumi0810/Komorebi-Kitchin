@@ -1,10 +1,33 @@
+.bannerContainer {
+  position: relative;
+  width: 100%;
+}
+
+.closeButton {
+  position: absolute;
+  top: -15px;
+  right: -5px;
+  width: 24px;
+  height: 24px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .bannerWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   width: 100%;
-  height: auto;
   transition: opacity 0.5s ease-in-out;
 }
 
@@ -22,17 +45,16 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 0;
   }
 }
 
 @media (max-width: 768px) {
   .bannerWrapper {
-    gap: 5px;
+    gap: 0;
   }
 
   .bannerItem {
-    max-width: none;
+    max-width: 100%;
     aspect-ratio: 16 / 9;
   }
 }
