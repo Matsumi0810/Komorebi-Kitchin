@@ -33,7 +33,7 @@
 
 .bannerItem {
   flex: 1;
-  max-width: 120px;
+  max-width: 150px;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   display: flex;
@@ -54,7 +54,7 @@
   }
 
   .bannerItem {
-    max-width: 100%;
+    max-width: 80px;
     aspect-ratio: 16 / 9;
   }
 }
