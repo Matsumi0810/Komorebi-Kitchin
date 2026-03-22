@@ -8,8 +8,9 @@
   right: 20px;
   left: 20px;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
   z-index: 100;
   pointer-events: none;
 
@@ -18,11 +19,23 @@
   }
 }
 
-.bannerWrapper {
-  flex: 1;
+.instaWrapper {
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin: 0 15px;
+}
+
+.bannerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.topBtnWrapper {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
@@ -42,15 +55,19 @@
   .instaWrapper {
     grid-area: insta;
     margin-bottom: 5px;
+    justify-content: flex-start;
   }
 
   .bannerWrapper {
     grid-area: banner;
     margin: 0;
-    padding-top: 10px; // バツボタンのスペース確保
+    padding-top: 10px;
+    width: 100%;
   }
 
   .topBtnWrapper {
     grid-area: top;
+    margin-left: 0;
+    justify-content: flex-end;
   }
 }
