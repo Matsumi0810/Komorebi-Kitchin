@@ -57,7 +57,7 @@ const MenuPage = () => {
       title: "期間限定",
       subTitle: "Fair",
       path: "/menu/fair",
-      note: "冬のごちそうセレクション：本場バレンタインフェア開催中！",
+      note: "冬のごちそうセレクション：バレンタインフェア開催中！",
       large: true,
     },
     {
