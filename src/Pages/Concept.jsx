@@ -25,8 +25,6 @@ const conceptData = [
   },
 ];
 
-// レンダリング＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-
 const Concept = () => {
   const itemRefs = useRef([]);
 
@@ -51,31 +49,39 @@ const Concept = () => {
   }, []);
 
   return (
-    <div id="concept" className={styles.concept}>
-      <div className={styles.conceptContainer}>
-        <h2 className={styles.pageTitle}>Concept</h2>
+    <>
+      <div className={styles.wave}>
+        <img
+          src="/Products/sectionTop/concept.png"
+          alt="コンセプトトップウェーブ"
+        />
+      </div>
+      <div id="concept" className={styles.concept}>
+        <div className={styles.conceptContainer}>
+          <h2 className={styles.pageTitle}>Concept</h2>
 
-        <div className={styles.conceptInner}>
-          {conceptData.map((item, index) => (
-            <div
-              className={styles.conceptItem}
-              key={item.id}
-              ref={(el) => (itemRefs.current[index] = el)}
-            >
-              <img
-                className={styles.conceptImg}
-                src={item.img}
-                alt={item.alt}
-              />
-              <div className={styles.textContainer}>
-                <p className={styles.conceptTtl}>{item.title}</p>
-                <p className={styles.conceptText}>{item.text}</p>
+          <div className={styles.conceptInner}>
+            {conceptData.map((item, index) => (
+              <div
+                className={styles.conceptItem}
+                key={item.id}
+                ref={(el) => (itemRefs.current[index] = el)}
+              >
+                <img
+                  className={styles.conceptImg}
+                  src={item.img}
+                  alt={item.alt}
+                />
+                <div className={styles.textContainer}>
+                  <p className={styles.conceptTtl}>{item.title}</p>
+                  <p className={styles.conceptText}>{item.text}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,69 +1,71 @@
-.concept {
+.wave {
   width: 100%;
-  padding-bottom: 100px;
-  background-color: var(--color-sub-beige);
+  line-height: 0;
+  background-color: transparent;
   position: relative;
-  z-index: 12;
-  scroll-margin-top: 80px;
+  z-index: 20;
+  margin-top: -8rem;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: -200px;
-    left: 0;
+  img {
     width: 100%;
-    height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      var(--color-sub-beige) 80%
-    );
-    pointer-events: none;
+    height: auto;
+    display: block;
   }
 
-  margin-top: 0;
+  @media (max-width: 768px) {
+    margin-top: -6rem;
+  }
+}
+
+.concept {
+  width: 100%;
+  padding-bottom: 10rem;
+  background-color: var(--color-sub-beige);
+  position: relative;
+  z-index: 20;
+  scroll-margin-top: 8rem;
+  margin-top: -0.1rem;
 }
 
 .conceptContainer {
-  padding: 60px;
+  padding: 6rem;
 
   @media (max-width: 768px) {
-    padding: 30px 0;
+    padding: 3rem 0;
   }
 }
 
-// CONCEPT
 .pageTitle {
   width: 90%;
-  max-width: 1200px;
-  font-size: clamp(40px, 10vw, 60px);
+  max-width: 120rem;
+  font-size: clamp(4rem, 10vw, 6rem);
   color: var(--color-text-main);
   font-weight: 500;
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
   line-height: 1;
   text-align: left;
   opacity: 0.8;
 
   @media (max-width: 480px) {
-    padding-left: 30px;
+    padding-left: 3rem;
   }
 }
 
 .conceptInner {
   width: 90%;
-  max-width: 1200px;
+  max-width: 120rem;
   margin: 0 auto;
-  padding: 80px 40px 120px;
+  padding: 8rem 4rem 12rem;
   display: flex;
   flex-direction: column;
-  gap: 160px;
+  gap: 16rem;
   background-color: #f9eddb;
-  border-radius: 20px;
+  border-radius: 2rem;
 
   @media (max-width: 768px) {
-    gap: 100px;
-    padding: 0 0 80px;
+    gap: 10rem;
+    padding: 0 0 8rem;
     border-radius: 0;
     background-color: var(--color-sub-beige);
   }
@@ -76,7 +78,7 @@
   width: 100%;
   position: relative;
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(5rem);
   transition:
     opacity 0.8s ease,
     transform 0.8s ease;
@@ -96,14 +98,14 @@
 }
 
 .conceptImg {
-  width: clamp(300px, 45vw, 680px);
+  width: clamp(30rem, 45vw, 68rem);
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   z-index: 1;
   position: relative;
   flex-shrink: 0;
-  box-shadow: 8px 12px 32px rgba(0, 0, 0, 0.13);
+  box-shadow: 0.8rem 1.2rem 3.2rem rgba(0, 0, 0, 0.13);
 
   @media (max-width: 768px) {
     width: 100vw;
@@ -114,62 +116,61 @@
 }
 
 .textContainer {
-  background-color: #ffffffcc;
-  padding: 50px 56px;
-  min-width: 340px;
-  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5rem 5.6rem;
+  min-width: 34rem;
+  max-width: 50rem;
   z-index: 2;
-  margin-left: -60px;
+  margin-left: -6rem;
   position: relative;
-  top: 40px;
-  border-block: 2px dashed
+  top: 4rem;
+  border-block: 0.2rem dashed
     color-mix(in srgb, var(--color-accent-orange), transparent 50%);
-  box-shadow: 4px 8px 24px rgba(0, 0, 0, 0.07);
+  box-shadow: 0.4rem 0.8rem 2.4rem rgba(0, 0, 0, 0.07);
 
-  // 偶数番目のコンテンツ
   .conceptItem:nth-child(even) & {
     margin-left: 0;
-    margin-right: -60px;
+    margin-right: -6rem;
   }
 
   @media (max-width: 1024px) {
-    padding: 40px;
-    min-width: 280px;
-    max-width: 420px;
-    margin-left: -50px;
+    padding: 4rem;
+    min-width: 28rem;
+    max-width: 42rem;
+    margin-left: -5rem;
 
     .conceptItem:nth-child(even) & {
-      margin-right: -50px;
+      margin-right: -5rem;
     }
   }
 
   @media (max-width: 768px) {
-    width: calc(100% - 60px);
+    width: calc(100% - 6rem);
     max-width: none;
     min-width: 0;
-    margin: -48px 30px 0 !important;
+    margin: -4.8rem 3rem 0 !important;
     top: 0;
-    padding: 30px;
-    font-size: 14px;
-    box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.08);
+    padding: 3rem;
+    font-size: 1.4rem;
+    box-shadow: 0.2rem 0.4rem 1.6rem rgba(0, 0, 0, 0.08);
   }
 
   @media (max-width: 480px) {
-    width: calc(100% - 40px);
-    margin: -48px 20px 0 !important;
-    padding: 24px 20px;
+    width: calc(100% - 4rem);
+    margin: -4.8rem 2rem 0 !important;
+    padding: 2.4rem 2rem;
   }
 }
 
 .conceptTtl {
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 24px;
+  margin-bottom: 2.4rem;
   color: #333;
 }
 
 .conceptText {
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 2;
   color: var(--color-text-main);
   white-space: pre-wrap;
