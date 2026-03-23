@@ -1,25 +1,86 @@
 .container {
   background-color: var(--color-bg-base);
   min-height: 100vh;
-  padding: 80px 5% 60px;
+  padding: 8rem 5% 6rem;
+  color: var(--color-text-main);
+  display: block;
 }
 
 .header {
   text-align: center;
-  margin: 60px 0;
+  margin: 6rem auto;
+  width: 100%;
 }
 
 .title {
-  font-family: 'Yusei Magic', sans-serif;
-  font-size: 3rem;
+  font-family: "Yusei Magic", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
   color: var(--color-green);
-  margin-top: 60px;
+  margin: 0;
+}
+
+.fixedQuickNav {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-green);
+  z-index: 2000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 12px 0;
+  transform: translateY(-124%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+
+  &.active {
+    transform: translateY(0);
+  }
+}
+
+.quickNavInner {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 0 20px 5px;
+  width: 100%;
+  justify-content: center;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    height: 3px;
+    display: block;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+  }
+}
+
+.quickNavItem {
+  background: #fff;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: none;
+  flex-shrink: 0;
+
+  &.quickActive {
+    background: var(--color-accent-orange);
+    color: var(--color-bg-base);
+  }
 }
 
 .section {
-  max-width: 1000px;
-  margin: 0 auto 100px;
-  padding: 0 40px;
+  max-width: 120rem;
+  margin: 0 auto;
 }
 
 .morning {
@@ -29,26 +90,25 @@
 .sectionTtlWrapper {
   display: flex;
   align-items: baseline;
-  gap: 15px;
-  margin: 0 0 4px 8px;
+  gap: 1.5rem;
+  margin: 0 0 1rem 0.8rem;
 }
 
 .sectionTtl {
-  font-size: 24px;
+  font-size: 2.8rem;
   font-weight: bold;
-  color: var(--color-text-main);
 }
 
 .oderTime {
-  font-size: 14px;
-  color: var(--color-text-main);
+  font-size: 1.4rem;
 }
 
 .morningContainer {
   background-color: #fff;
-  border: 2px dashed color-mix(in srgb, var(--color-accent-orange), transparent 50%);
-  border-radius: 20px;
-  padding: clamp(20px, 4vw, 50px);
+  border: 2px dashed
+    color-mix(in srgb, var(--color-accent-orange), transparent 50%);
+  border-radius: 2rem;
+  padding: clamp(1.5rem, 3vw, 5rem);
   padding-bottom: 40px;
   display: flex;
   align-items: center;
@@ -83,6 +143,10 @@
   justify-content: center;
 }
 
+.tabItem {
+  cursor: pointer;
+}
+
 .morningInfoArea {
   display: flex;
   align-items: center;
@@ -110,7 +174,6 @@
   color: var(--color-text-main);
 }
 
-
 .categoryContent {
   margin-top: 60px;
   padding-top: 40px;
@@ -136,7 +199,8 @@
 
 .priceGroup {
   background: #fff;
-  border: 2px dashed color-mix(in srgb, var(--color-accent-orange), transparent 50%);
+  border: 2px dashed
+    color-mix(in srgb, var(--color-accent-orange), transparent 50%);
   padding: 40px 20px 25px;
   border-radius: 15px;
   position: relative;
@@ -170,7 +234,8 @@
 
 .horizontalFlex {
   background: #fff;
-  border: 2px dashed color-mix(in srgb, var(--color-accent-orange), transparent 50%);
+  border: 2px dashed
+    color-mix(in srgb, var(--color-accent-orange), transparent 50%);
   padding: 40px 20px 30px;
   border-radius: 15px;
 }
@@ -206,7 +271,6 @@
   }
 }
 
-// メニュートップへ戻るーーーーーーーーーーーーーーーーーーーーーー
 .backToMenuArea {
   display: flex;
   justify-content: center;
@@ -244,17 +308,23 @@
     transform: translateY(-8px);
   }
 }
+
 :global(.card) {
   text-align: center;
   display: flex;
   flex-direction: column;
-  
+
   :global(.imageBox) {
     border-radius: 12px 12px 0 0;
     overflow: hidden;
-    img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
   }
-  
+
   :global(.cardTitle) {
     background-color: var(--color-pet-yellow);
     color: var(--color-text-main);
@@ -267,13 +337,17 @@
     justify-content: center;
   }
 
-  &.xl { 
-    width: clamp(200px, 25vw, 240px); 
-    :global(.imageBox) { aspect-ratio: 1/1; } 
+  &.xl {
+    width: clamp(200px, 25vw, 240px);
+    :global(.imageBox) {
+      aspect-ratio: 1/1;
+    }
   }
-  
-  &:not(.xl) { 
-    width: 110px; 
-    :global(.imageBox) { aspect-ratio: 1.4/1; } 
+
+  &:not(.xl) {
+    width: 110px;
+    :global(.imageBox) {
+      aspect-ratio: 1.4/1;
+    }
   }
 }

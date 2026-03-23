@@ -1,24 +1,78 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "./MenuMorning.module.scss";
 import TopMenuCard from "../../Pages/TopMenuCard";
+import DrinksComponents from "../Menu/MenuDrinksComponent";
 
 const MenuMorning = () => {
+  const [activeTab, setActiveTab] = useState("toast");
+  const [showFixedNav, setShowFixedNav] = useState(false);
+  const [isNavVisible, setIsNavVisible] = useState(true);
+  const originalNavRef = useRef(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const handleScroll = () => {
+      if (originalNavRef.current) {
+        const rect = originalNavRef.current.getBoundingClientRect();
+        setShowFixedNav(rect.top <= 100);
+      }
+
+      const footer = document.querySelector("footer");
+      if (footer) {
+        const footerTop = footer.getBoundingClientRect().top;
+        // フッターが画面の下から300pxの位置まで来たらナビを上に上げる
+        if (footerTop < window.innerHeight - 300) {
+          setIsNavVisible(false);
+        } else {
+          setIsNavVisible(true);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleTabClick = (id) => {
+    setActiveTab(id);
+
+    setTimeout(() => {
+      const element = document.getElementById(`${id}Anchor`);
+      if (element) {
+        const yOffset = -160;
+        const y =
+          element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({
+          top: y,
+          behavior: "smooth",
+        });
+      }
+    }, 100);
+  };
 
   const morningItems = [
     {
-      id: 1,
+      id: "toast",
       image: "/Products/TopMenu/toast.png",
       title: "お好きなトースト",
       size: "xl",
     },
-    { id: 2, image: "/Products/TopMenu/salad.png", title: "サラダ", size: "m" },
-    { id: 3, image: "/Products/TopMenu/soup.png", title: "スープ", size: "m" },
     {
-      id: 4,
+      id: "salad",
+      image: "/Products/TopMenu/salad.png",
+      title: "サラダ",
+      size: "m",
+    },
+    {
+      id: "soup",
+      image: "/Products/TopMenu/soup.png",
+      title: "スープ",
+      size: "m",
+    },
+    {
+      id: "drink",
       image: "/Products/TopMenu/drink.png",
       title: "ドリンク",
       size: "m",
@@ -86,6 +140,23 @@ const MenuMorning = () => {
         <h2 className={styles.title}>Menu</h2>
       </header>
 
+      {/* 修正：isNavVisible が true の時だけ active クラスがつくように変更 */}
+      <nav
+        className={`${styles.fixedQuickNav} ${showFixedNav && isNavVisible ? styles.active : ""}`}
+      >
+        <div className={styles.quickNavInner}>
+          {morningItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => handleTabClick(item.id)}
+              className={`${styles.quickNavItem} ${activeTab === item.id ? styles.quickActive : ""}`}
+            >
+              {item.title === "お好きなトースト" ? "トースト" : item.title}
+            </button>
+          ))}
+        </div>
+      </nav>
+
       <section className={styles.section}>
         {/* --- モーニング ヘッダー------------------  */}
         <section className={styles.morning}>
@@ -110,14 +181,19 @@ const MenuMorning = () => {
             </div>
 
             <div className={styles.morningRightContent}>
-              <div className={styles.sideItemsFlex}>
+              <div ref={originalNavRef} className={styles.sideItemsFlex}>
                 {morningItems.slice(1).map((item) => (
-                  <TopMenuCard
+                  <div
                     key={item.id}
-                    image={item.image}
-                    title={item.title}
-                    size={item.size}
-                  />
+                    onClick={() => handleTabClick(item.id)}
+                    className={styles.tabItem}
+                  >
+                    <TopMenuCard
+                      image={item.image}
+                      title={item.title}
+                      size={item.size}
+                    />
+                  </div>
                 ))}
               </div>
 
@@ -138,9 +214,8 @@ const MenuMorning = () => {
             </div>
           </div>
         </section>
-
         {/* --- トースト ------------------ */}
-        <div className={styles.categoryContent}>
+        <div id="toastAnchor" className={styles.categoryContent}>
           <h3 className={styles.categoryTitle}>トースト</h3>
           <div className={styles.toastGrid}>
             {toastGroups.map((group, idx) => (
@@ -160,9 +235,8 @@ const MenuMorning = () => {
             ))}
           </div>
         </div>
-
         {/* --- サラダ ------------------  */}
-        <div className={styles.categoryContent}>
+        <div id="saladAnchor" className={styles.categoryContent}>
           <h3 className={styles.categoryTitle}>サラダ</h3>
           <div className={styles.horizontalFlex}>
             {saladItems.map((item, i) => (
@@ -175,9 +249,8 @@ const MenuMorning = () => {
             ))}
           </div>
         </div>
-
         {/* --- スープ ------------------  */}
-        <div className={styles.categoryContent}>
+        <div id="soupAnchor" className={styles.categoryContent}>
           <h3 className={styles.categoryTitle}>スープ</h3>
           <div className={styles.horizontalFlex}>
             {soupItems.map((item, i) => (
@@ -190,8 +263,16 @@ const MenuMorning = () => {
             ))}
           </div>
         </div>
+        {/* --- ドリンク ------------------  */}
+        <div id="drinkAnchor" className={styles.categoryContent}>
+          <h3 className={styles.categoryTitle}>ドリンク</h3>
+          <div className={styles.horizontalFlex}>
+            <DrinksComponents isLunch={true} />
+          </div>
+        </div>{" "}
       </section>
 
+      {/* メニュートップへ戻るーーーーーーーーーーーーーーーーーーーーーー */}
       <div className={styles.backToMenuArea}>
         <Link to="/menu" className={styles.backLink}>
           {"メニュートップに戻る".split("").map((char, index) => (
