@@ -103,17 +103,18 @@
   font-size: 1.4rem;
 }
 
+/* --- モーニング：メイン構成修正 --- */
 .morningContainer {
   background-color: #fff;
   border: 2px dashed
     color-mix(in srgb, var(--color-accent-orange), transparent 50%);
-  border-radius: 2rem;
-  padding: clamp(1.5rem, 3vw, 5rem);
+  border-radius: 20px;
+  padding: clamp(20px, 4vw, 50px);
   padding-bottom: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(15px, 3vw, 40px);
+  gap: clamp(10px, 2vw, 24px);
 
   @media (max-width: 1040px) {
     flex-direction: column;
@@ -121,26 +122,38 @@
   }
 }
 
+.mainItem {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
 .plusWrapper {
-  flex-shrink: 0;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   img {
-    width: clamp(30px, 5vw, 50px);
+    width: clamp(24px, 3.5vw, 44px);
     height: auto;
   }
 }
 
 .morningRightContent {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 24px;
   align-items: center;
-  flex: 1;
+  min-width: 0;
+  max-width: 480px;
 }
 
 .sideItemsFlex {
   display: flex;
   gap: clamp(8px, 1.5vw, 20px);
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .tabItem {
@@ -173,6 +186,8 @@
   margin-bottom: 10px;
   color: var(--color-text-main);
 }
+
+/* ----------------------------- */
 
 .categoryContent {
   margin-top: 60px;
@@ -345,7 +360,7 @@
   }
 
   &:not(.xl) {
-    width: 110px;
+    width: 100px; // sideItems内でのサイズ
     :global(.imageBox) {
       aspect-ratio: 1.4/1;
     }
