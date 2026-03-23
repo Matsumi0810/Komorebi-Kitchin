@@ -183,63 +183,70 @@ const DrinksComponents = ({ isLunch }) => {
   return (
     // isLunch が true の場合は枠線を消す (noBorder) ためのクラス切り替え
     <section className={`${styles.section} ${isLunch ? styles.noBorder : ""}`}>
-      {/* --- メインのドリンクカテゴリー --- */}
-      {drinkData.map((cat, index) => (
-        <div
-          key={index}
-          //画像とテキストを交互に描画
-          className={`${styles.categoryBlock} ${index % 2 !== 0 ? styles.reverse : ""}`}
-        >
-          <div className={styles.textContent}>
-            <h3 className={styles.drinkCategoryTitle}>{cat.category}</h3>
-            <div className={styles.itemList}>
-              {cat.items.map((item, i) => (
-                <div key={i} className={styles.drinkItem}>
-                  <div className={styles.itemMain}>
-                    <span className={styles.marker}>■</span>
-                    <span className={styles.itemName}>{item.name}</span>
-                    <span className={styles.itemPrice}>（{item.price}）</span>
+      
+      <div className={styles.groupBlock}>
+        <span className={styles.groupBgTitleC}>COFFEE</span>
+        {/* --- メインのドリンクカテゴリー --- */}
+        {drinkData.map((cat, index) => (
+          <div
+            key={index}
+            //画像とテキストを交互に描画
+            className={`${styles.categoryBlock} ${index % 2 !== 0 ? styles.reverse : ""}`}
+          >
+            <div className={styles.textContent}>
+              <h3 className={styles.drinkCategoryTitle}>{cat.category}</h3>
+              <div className={styles.itemList}>
+                {cat.items.map((item, i) => (
+                  <div key={i} className={styles.drinkItem}>
+                    <div className={styles.itemMain}>
+                      <span className={styles.marker}>■</span>
+                      <span className={styles.itemName}>{item.name}</span>
+                      <span className={styles.itemPrice}>（{item.price}）</span>
+                    </div>
+                    {/* コーヒーの説明 */}
+                    <p className={styles.itemNote}>{item.note}</p>
                   </div>
-                  {/* コーヒーの説明 */}
-                  <p className={styles.itemNote}>{item.note}</p>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+            <div className={styles.imageContent}>
+              {/* 画像の上に表示する商品名帯 */}
+              <span className={styles.imageProductName}>
+                {cat.imageProductName}
+              </span>
+              <img src={cat.image} alt={cat.imageProductName} />
             </div>
           </div>
-          <div className={styles.imageContent}>
-            {/* 画像の上に表示する商品名帯 */}
-            <span className={styles.imageProductName}>
-              {cat.imageProductName}
-            </span>
-            <img src={cat.image} alt={cat.imageProductName} />
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
 
       {/* --- Other ーーーーーーーーーーーーーーーーーーーーーーーーー --- */}
-      <div className={styles.otherSection}>
-        <h3 className={styles.drinkCategoryTitle}>Other</h3>
-        <div className={styles.otherGrid}>
-          <div className={styles.otherColumns}>
-            <div className={styles.otherColumn}>
-              {/* 左 */}
-              {otherLeft.map((item, i) => (
-                <span key={i} className={styles.otherItem}>
-                  {item}
-                </span>
-              ))}
+      <div className={styles.groupBlock}>
+        <span className={styles.groupBgTitleO}>OTHER</span>
+        <div className={styles.otherSection}>
+          <h3 className={styles.drinkCategoryTitle}>Softdrink & Tea</h3>
+          <div className={styles.otherGrid}>
+            <div className={styles.otherColumns}>
+              <div className={styles.otherColumn}>
+                {/* 左 */}
+                {otherLeft.map((item, i) => (
+                  <span key={i} className={styles.otherItem}>
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <div className={styles.otherColumn}>
+                {/* 右 */}
+                {otherRight.map((item, i) => (
+                  <span key={i} className={styles.otherItem}>
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className={styles.otherColumn}>
-              {/* 右 */}
-              {otherRight.map((item, i) => (
-                <span key={i} className={styles.otherItem}>
-                  {item}
-                </span>
-              ))}
+            <div className={styles.otherPrice}>
+              <span>税込 500円</span>
             </div>
-          </div>
-          <div className={styles.otherPrice}>
-            <span>税込 500円</span>
           </div>
         </div>
       </div>

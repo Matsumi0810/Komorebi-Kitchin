@@ -1,19 +1,19 @@
 .container {
   background-color: var(--color-bg-base);
   min-height: 100vh;
-  padding: 80px 5% 60px;
+  padding: 8rem 5% 6rem;
 }
 
 .header {
   text-align: center;
-  margin: 60px 0;
+  margin: 6rem 0;
 }
 
 .title {
   font-family: 'Yusei Magic', sans-serif;
   font-size: 3rem;
   color: var(--color-green);
-  margin-top: 60px;
+  margin-top: 6rem;
 }
 
 .categoryName {
@@ -21,37 +21,79 @@
   font-size: 1.4rem;
   color: var(--color-accent-orange);
   font-weight: bold;
-  margin-top: 5px;
+  margin-top: 0.5rem;
 }
 
 .section {
-  max-width: 1100px;
-  margin: 0 auto 100px;
+  max-width: 110rem;
+  margin: 0 auto 10rem;
   background-color: #fff;
-  padding: 80px 60px;
-  border-radius: 12px;
-  border: 2px dashed color-mix(in srgb, var(--color-accent-orange), transparent 50%);
+  padding: 8rem 6rem;
+  border-radius: 1.2rem;
+  border: 0.2rem dashed color-mix(in srgb, var(--color-accent-orange), transparent 50%);
 
   &.noBorder {
     border: none;
     background-color: transparent;
-    padding: 20px 0;
+    padding: 2rem 0;
     margin-bottom: 0;
     max-width: 100%;
   }
 
   @media (max-width: 768px) {
-    padding: 40px 20px;
+    padding: 4rem 2rem;
     &.noBorder {
-      padding: 20px 0;
+      padding: 2rem 0;
     }
   }
 }
 
+.groupBlock {
+  position: relative;
+  margin-bottom: 12rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.groupBgTitleC {
+  font-size: 10rem;
+  font-style: italic;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.05);
+  z-index: 0;
+  pointer-events: none;
+  font-family: 'serif';
+  white-space: nowrap;
+
+  @media (max-width: 768px) {
+    font-size: 6rem;
+    top: -4rem;
+  }
+}
+.groupBgTitleO {
+  font-size: 10rem;
+  font-style: italic;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.05);
+  z-index: 0;
+  pointer-events: none;
+  font-family: 'serif';
+  white-space: nowrap;
+  margin-bottom: -0.8rem;
+
+  @media (max-width: 768px) {
+    font-size: 6rem;
+  }
+}
+
 .categoryBlock {
+  position: relative;
+  z-index: 1;
   display: flex;
-  gap: 60px;
-  margin-bottom: 100px;
+  gap: 6rem;
+  margin-bottom: 0.4rem;
   align-items: center;
 
   &.reverse {
@@ -60,8 +102,8 @@
 
   @media (max-width: 900px) {
     flex-direction: column !important;
-    gap: 30px;
-    margin-bottom: 60px;
+    gap: 3rem;
+    margin-bottom: 6rem;
   }
 }
 
@@ -72,9 +114,9 @@
 .imageContent {
   position: relative;
   flex: 0.8;
-  border-radius: 8px;
+  border-radius: 0.8rem;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 0.4rem 1.5rem rgba(0,0,0,0.1);
 
   .imageProductName {
     position: absolute;
@@ -84,21 +126,21 @@
     width: 100%;
     background-color: rgba(102, 75, 47, 0.7);
     color: #fff;
-    padding: 8px 12px;
-    margin-bottom: 16px;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 1.6rem;
     font-size: 1.6rem;
     font-weight: bold;
     z-index: 2;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(0.2rem);
     text-align: right;
   }
   
   img {
     width: 100%;
-    height: 450px;
+    height: 45rem;
     object-fit: cover;
     display: block;
-    border-radius: 8px;
+    border-radius: 0.8rem;
   }
 
   @media (max-width: 900px) {
@@ -107,15 +149,15 @@
     margin-top: 0;
 
     .imageProductName {
-      bottom: 10px;
-      right: 10px;
+      bottom: 1rem;
+      right: 1rem;
       font-size: 1.1rem;
-      padding: 6px 12px;
+      padding: 0.6rem 1.2rem;
       margin-bottom: 0;
     }
 
     img {
-      height: 250px;
+      height: 25rem;
     }
   }
 }
@@ -123,22 +165,22 @@
 .drinkCategoryTitle {
   font-size: 2.2rem;
   color: var(--color-text-main);
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
   font-weight: bold;
-  border-bottom: 2px solid var(--color-sub-beige);
-  padding-bottom: 10px;
+  border-bottom: 0.2rem solid var(--color-sub-beige);
+  padding-bottom: 1rem;
 }
 
 .drinkItem {
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 
 .itemMain {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 5px;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
 }
 
 .marker {
@@ -160,39 +202,41 @@
 .itemNote {
   font-size: 1.4rem;
   color: var(--color-text-main);
-  padding-left: 20px;
+  padding-left: 2rem;
   line-height: 1.6;
 }
 
 .otherSection {
-  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+  margin-top: 4rem;
 }
 
 .otherGrid {
   position: relative;
-  border-radius: 8px;
-  padding: 60px ;
+  border-radius: 0.8rem;
+  padding: 6rem;
 
   @media (max-width: 600px) {
-    padding: 20px;
+    padding: 2rem;
   }
 }
 
 .otherColumns {
   display: flex;
   justify-content: flex-start;
-  gap: 40px;
+  gap: 4rem;
 
   @media (max-width: 600px) {
     flex-direction: column;
-    gap: 15px;
+    gap: 1.5rem;
   }
 }
 
 .otherColumn {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1.5rem;
   flex: 0 0 45%;
 
   @media (max-width: 600px) {
@@ -208,7 +252,7 @@
 
 .otherPrice {
   text-align: right;
-  margin-top: 20px;
+  margin-top: 2rem;
   font-size: 1.8rem;
   font-weight: bold;
   color: var(--color-text-main);
@@ -217,8 +261,8 @@
 .backToMenuArea {
   display: flex;
   justify-content: center;
-  margin-top: 80px;
-  padding-bottom: 40px;
+  margin-top: 8rem;
+  padding-bottom: 4rem;
 }
 
 .backLink {
@@ -227,8 +271,8 @@
   color: var(--color-text-main);
   font-size: 2rem;
   font-weight: bold;
-  padding-bottom: 2px;
-  border-bottom: 5px solid var(--color-accent-orange);
+  padding-bottom: 0.2rem;
+  border-bottom: 0.5rem solid var(--color-accent-orange);
   cursor: pointer;
 
   span {
@@ -245,5 +289,5 @@
 
 @keyframes bounce {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-8px); }
+  100% { transform: translateY(-0.8rem); }
 }
