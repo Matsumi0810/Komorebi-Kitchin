@@ -124,8 +124,14 @@ const MenuDesserts = () => {
         <h2 className={styles.title}>Menu</h2>
       </header>
 
+      <div className={styles.dessertHero}>
+        <img
+          src="/Products/gelato/gelatoHero.png"
+          alt="ジェラートのヒーロー画像"
+        />
+      </div>
+
       <section className={styles.section}>
-        {/* ジェラート ーーーーーーーーーーーーーーーーーーーーーー*/}
         <div className={styles.categoryContent}>
           <h3 className={styles.categoryTitle}>ジェラート</h3>
           <div className={styles.borderBox}>
@@ -175,8 +181,13 @@ const MenuDesserts = () => {
             </div>
           </div>
         </div>
+      </section>
 
-        {/* ケーキ ーーーーーーーーーーーーーーーーーーーーーー*/}
+      <div className={styles.dessertHero}>
+        <img src="/Products/cake/cakeHero.png" alt="ケーキのヒーロー画像" />
+      </div>
+
+      <section className={styles.section}>
         <div className={styles.categoryContent}>
           <h3 className={styles.categoryTitle}>ケーキ</h3>
           <div className={styles.borderBox}>
