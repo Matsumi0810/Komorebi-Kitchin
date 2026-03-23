@@ -5,17 +5,13 @@ import styles from "./Banner.module.scss";
 const Banner = () => {
   const [allBanners, setAllBanners] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true); // 初期値は常に表示
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener("resize", handleResize);
 
-    const hiddenStatus = localStorage.getItem("banner-hidden");
-    if (hiddenStatus === "true") {
-      setIsVisible(false);
-    }
 
     client
       .get({
@@ -52,7 +48,6 @@ const Banner = () => {
 
   const handleClose = () => {
     setIsVisible(false);
-    localStorage.setItem("banner-hidden", "true");
   };
 
   if (!isVisible || allBanners.length === 0) return null;
@@ -62,11 +57,10 @@ const Banner = () => {
 
   return (
     <div className={styles.bannerContainer}>
-      {isMobile && (
-        <button className={styles.closeButton} onClick={handleClose}>
-          ×
-        </button>
-      )}
+      <button className={styles.closeButton} onClick={handleClose}>
+        ×
+      </button>
+
       <div className={styles.bannerWrapper}>
         {displayBanners.map((banner) => (
           <div key={banner.id} className={styles.bannerItem}>
