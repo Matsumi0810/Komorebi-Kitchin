@@ -70,20 +70,9 @@ const MenuDesserts = () => {
 
       // 取ってきたデータの中から、IDを指定してジェラートとケーキに振り分ける
       // ジェラート
-      setGelatoItems(
-        contents.filter(
-          (item) => item.id === "jv9dxzp4t11a" || item.id === "2oc4icbcz7",
-        ),
-      );
+      setGelatoItems(contents.filter((item) => item.category === 1));
       // ケーキ
-      setCakeItems(
-        contents.filter(
-          (item) =>
-            item.id === "7csa4t6coib" ||
-            item.id === "an2eexf_l3" ||
-            item.id === "2s_nfho7nnl",
-        ),
-      );
+      setCakeItems(contents.filter((item) => item.category === 2));
       // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     } catch (error) {
       console.error("Failed to fetch fairdessert:", error);
