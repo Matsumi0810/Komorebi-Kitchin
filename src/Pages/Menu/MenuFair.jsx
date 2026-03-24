@@ -42,13 +42,22 @@ const MenuFair = () => {
       return (
         <div className={styles.multiPrice}>
           {item.price1 && (
-            <span>Sサイズ（ハーフ） 税込{item.price1.toLocaleString()}円</span>
+            <span>
+              {item.category === 2 && "Sサイズ（ハーフ） "}
+              税込{item.price1.toLocaleString()}円
+            </span>
           )}
           {item.price2 && (
-            <span>Mサイズ（ホール） 税込{item.price2.toLocaleString()}円</span>
+            <span>
+              {item.category === 2 && "Mサイズ（ホール） "}
+              税込{item.price2.toLocaleString()}円
+            </span>
           )}
           {item.price3 && (
-            <span>Lサイズ（ラージ） 税込{item.price3.toLocaleString()}円</span>
+            <span>
+              {item.category === 2 && "Lサイズ（ラージ） "}
+              税込{item.price3.toLocaleString()}円
+            </span>
           )}
         </div>
       );
