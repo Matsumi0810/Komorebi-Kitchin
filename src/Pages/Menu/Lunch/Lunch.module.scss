@@ -76,7 +76,7 @@
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   border: none;
-  flex-shrink: 0; /* ボタンが潰れないようにする */
+  flex-shrink: 0;
 
   &.quickActive {
     background: var(--color-accent-orange);
@@ -109,6 +109,10 @@
   flex-direction: column;
   gap: 0;
   margin-bottom: 4rem;
+  @media (max-width: 480px) {
+    padding: clamp(1rem, 5vw, 3rem);
+  }
+
 }
 
 .recommendContainer {
