@@ -109,8 +109,8 @@
   flex-direction: column;
   gap: 0;
   margin-bottom: 4rem;
-  @media (max-width: 480px) {
-    padding: clamp(1rem, 5vw, 3rem);
+  @media (max-width: 600px) {
+    padding: clamp(0.4rem, 5vw, 2rem);
   }
 
 }
