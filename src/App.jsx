@@ -9,6 +9,7 @@ import MenuDrinks from "./Pages/Menu/MenuDrinks";
 import MenuMorning from "./Pages/Menu/MenuMorning";
 import MenuDesserts from "./Pages/Menu/MenuDesserts";
 import Lunch from "./Pages/Menu/Lunch/Lunch";
+import MemberRegistrationPage from "./Pages/MemberRegistrationPage";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="desserts" element={<MenuDesserts />} />
           <Route path="lunch" element={<Lunch />} />
         </Route>{" "}
+        <Route path="/member-registration" element={<MemberRegistrationPage />} />
       </Route>
     </Routes>
   );

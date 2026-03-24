@@ -4,7 +4,7 @@
   background-color: transparent;
   position: relative;
   z-index: 20;
-  margin-top: -8rem;
+  margin-top: -10rem;
 
   img {
     width: 100%;
@@ -28,7 +28,7 @@
 }
 
 .conceptContainer {
-  padding: 6rem;
+  padding: 0 6rem 6rem;
 
   @media (max-width: 768px) {
     padding: 3rem 0;

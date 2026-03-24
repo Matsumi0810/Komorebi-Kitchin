@@ -1,0 +1,116 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--color-text-main);
+}
+
+.tag {
+  background-color: var(--color-accent-orange);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.4rem 1.2rem;
+  border-radius: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: "Yusei Magic", sans-serif; // お使いのフォントに合わせてね
+  font-size: 2.2rem;
+  color: var(--color-green);
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.couponBox {
+  background-color: #fff;
+  border: 0.2rem dashed var(--color-accent-orange);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 32rem;
+  margin-bottom: 2rem;
+  position: relative;
+  
+  // クーポンの「切り取り線」っぽさを出す左右の円
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--color-bg-base); // 背景色と同じにして削れてる風に
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  &::before { left: -1.2rem; }
+  &::after { right: -1.2rem; }
+}
+
+.couponLabel {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.discount {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  color: var(--color-accent-orange);
+  margin-bottom: 0.5rem;
+
+  .number {
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+  .percent {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+  }
+}
+
+.couponText {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.registerBtn {
+  background-color: var(--color-green);
+  color: #fff;
+  border: none;
+  padding: 1.2rem 3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 0.4rem 0 color-mix(in srgb, var(--color-green), #000 20%);
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--color-green), #fff 10%);
+    transform: translateY(-0.2rem);
+  }
+
+  &:active {
+    transform: translateY(0.1rem);
+    box-shadow: none;
+  }
+}
+
+.note {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  color: #888;
+}

@@ -40,7 +40,13 @@ const Home = () => {
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         {modalContent && (
           <div className={styles.modalInner}>
-            <img src={modalContent.images.url} alt="Modal Notice" />
+            {modalContent.url ? (
+              <a href={modalContent.url}>
+                <img src={modalContent.images.url} alt="Modal Notice" />
+              </a>
+            ) : (
+              <img src={modalContent.images.url} alt="Modal Notice" />
+            )}
           </div>
         )}
       </Modal>
