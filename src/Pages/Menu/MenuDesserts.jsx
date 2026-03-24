@@ -70,9 +70,9 @@ const MenuDesserts = () => {
 
       // 取ってきたデータの中から、IDを指定してジェラートとケーキに振り分ける
       // ジェラート
-      setGelatoItems(contents.filter((item) => item.category === 1));
+      setGelatoItems(contents.filter((item) => item.category === 4));
       // ケーキ
-      setCakeItems(contents.filter((item) => item.category === 2));
+      setCakeItems(contents.filter((item) => item.category === 5));
       // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     } catch (error) {
       console.error("Failed to fetch fairdessert:", error);
