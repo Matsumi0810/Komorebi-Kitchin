@@ -232,7 +232,7 @@ const Menu = () => {
 
           <div className={styles.innerButton}>
             <Link to="/menu/lunch" style={{ textDecoration: "none" }}>
-              <Button text="メニューを見る →" color="orange" />
+              <Button text="ランチメニューを見る →" color="orange" />
             </Link>
           </div>
         </div>
@@ -266,7 +266,7 @@ const Menu = () => {
 
           <div className={styles.innerButton}>
             <Link to="/menu/desserts" style={{ textDecoration: "none" }}>
-              <Button text="メニューを見る →" color="orange" />
+              <Button text="デザートメニューを見る →" color="orange" />
             </Link>
           </div>
         </div>
