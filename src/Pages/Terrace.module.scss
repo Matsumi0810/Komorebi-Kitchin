@@ -190,6 +190,9 @@
   left: -2vw; 
   background-image: url("/Products/illust/illust1.png");
   transform: scaleX(-1);
+  @media (max-width: 768px) {
+    transform: scaleX(-1) translateY(10px);
+  }
 }
 
 .dogRight {
@@ -197,6 +200,9 @@
   background-image: url("/Products/illust/illust6.png");
   width: clamp(70px, 12vw, 130px);
   height: clamp(70px, 12vw, 130px);
+  @media (max-width: 768px) {
+    transform: translateY(10px);
+  }
 }
 
 .faqGrid {
