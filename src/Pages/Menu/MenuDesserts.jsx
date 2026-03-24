@@ -105,7 +105,7 @@ const MenuDesserts = () => {
       <div className={styles.info}>
         <h4 className={styles.itemTitle}>{item.title}</h4>
         <p className={styles.singlePrice}>
-          税込 {item.price?.toLocaleString()}円
+          税込 {item.price1?.toLocaleString()}円
         </p>
         <div className={styles.descriptionWrapper}>
           <div
