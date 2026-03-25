@@ -74,9 +74,7 @@
   gap: clamp(40px, 8vw, 60px);
   position: relative;
   overflow: hidden;
-  @media (max-width: 768px) {
-    padding: clamp(4px, 5vw, 8px);
-  }
+  
 }
 
 
