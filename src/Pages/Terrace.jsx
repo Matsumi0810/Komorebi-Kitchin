@@ -82,14 +82,17 @@ const Terrace = () => {
         {/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */}
 
         {/* 【SNSエリア】Instagramへの誘導とスライダー */}
-        <section className={styles.insta}>
+        <section className={styles.instaTextOnly}>
           <InstagramLink
-            text={`その他質問や相談がございましたら
-DMにてお気軽にお聞きください。`}
+            text={`その他質問や相談がございましたら\nDMにてお気軽にお聞きください。`}
           />
-          <InstaSlider />
         </section>
       </div>
+
+      {/* スライダーだけを外側に出す */}
+      <section className={styles.instaSliderFullWidth}>
+        <InstaSlider />
+      </section>
     </div>
   );
 };

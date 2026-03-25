@@ -24,17 +24,18 @@
 
 // 女の子がひょこひょこ揺れるアニメーション
 @keyframes yure {
-  0%, 100% { 
-    transform: translateY(0) rotate(0deg); 
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
   }
-  25% { 
-    transform: translateY(-3px) rotate(-3deg); 
+  25% {
+    transform: translateY(-3px) rotate(-3deg);
   }
-  50% { 
-    transform: translateY(0) rotate(0deg); 
+  50% {
+    transform: translateY(0) rotate(0deg);
   }
-  75% { 
-    transform: translateY(-3px) rotate(3deg); 
+  75% {
+    transform: translateY(-3px) rotate(3deg);
   }
 }
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -42,7 +43,7 @@
 .terrace {
   width: 100%;
   background-color: var(--color-pet-yellow);
-  padding: 0 0 clamp(40px, 8vw, 80px); 
+  padding: 0 0 clamp(40px, 8vw, 80px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,27 +57,26 @@
   color: var(--color-text-main);
   font-weight: 500;
   margin-top: clamp(10px, 4vw, 20px);
-  margin-bottom: clamp(10px, 4vw, 20px); 
+  margin-bottom: clamp(10px, 4vw, 20px);
   line-height: 1;
   text-align: left;
-    opacity: 0.8;
-
+  opacity: 0.8;
 }
 
 .terraceInner {
   width: 90%;
   max-width: 1200px;
   background-color: var(--color-bg-base);
-  border-radius: 40px; 
+  border-radius: 40px;
   padding: clamp(30px, 5vw, 80px);
   display: flex;
   flex-direction: column;
   gap: clamp(40px, 8vw, 60px);
   position: relative;
+  /* スライダーを外に出すため、ここはoverflow: visibleにするか、
+     構造自体を分けてスライダーをこの外に配置します */
   overflow: hidden;
-  
 }
-
 
 // イントロと写真
 .introContent {
@@ -84,7 +84,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  border-bottom: 2px dashed color-mix(in srgb, var(--color-accent-orange), transparent 50%);
+  border-bottom: 2px dashed
+    color-mix(in srgb, var(--color-accent-orange), transparent 50%);
   position: relative;
   padding-bottom: 40px;
 
@@ -171,7 +172,8 @@
   margin: 20px 0;
 }
 
-.dogLeft, .dogRight {
+.dogLeft,
+.dogRight {
   position: absolute;
   width: clamp(120px, 15vw, 200px);
   height: clamp(120px, 15vw, 200px);
@@ -179,8 +181,8 @@
   background-repeat: no-repeat;
   z-index: 1;
   pointer-events: none;
-  
-  bottom: -160px; 
+
+  bottom: -160px;
 
   @media (max-width: 900px) {
     bottom: -150px;
@@ -188,7 +190,7 @@
 }
 
 .dogLeft {
-  left: -2vw; 
+  left: -2vw;
   background-image: url("/Products/illust/illust1.png");
   transform: scaleX(-1);
   @media (max-width: 768px) {
@@ -224,10 +226,21 @@
   }
 }
 
+/* SNSセクション（テキスト部分）------------------- */
 .insta {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
   width: 100%;
+}
+
+/* 画面いっぱいのスライダー用 --------------------- */
+.instaSliderFullWidth {
+  width: 100%;
+  margin-top: 60px;
+
+  :global(.swiper) {
+    width: 100%;
+  }
 }
