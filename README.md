@@ -1,16 +1,66 @@
-# React + Vite
+# コモレビ・キッチン 公式模擬サイト
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+架空のカフェ「コモレビ・キッチン」の公式Webサイトです。  
+エンジニア以外のスタッフでも気軽にコンテンツを更新できる、運用しやすいサイトを目指して制作しました。
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 使用技術
 
-## React Compiler
+| カテゴリ       | 技術                             |
+| -------------- | -------------------------------- |
+| フロントエンド | React / JavaScript / Sass (SCSS) |
+| CMS            | microCMS                         |
+| フォーム       | SSGform                          |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 主な機能
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **CMS連携によるコンテンツ管理**　メニュー・バナー・お知らせをmicroCMSで管理。エンジニア以外でも更新可能
+- **お知らせモーダル**　カテゴリーナンバーで管理し、トップページ表示時に自動で表示
+- **スライドバナー**　期間限定情報などをCMSから取得して表示。×ボタンで閉じられ、リロードで再表示
+- **応募フォーム**　SSGform連携により、フォーム送信内容が指定メールアドレスに自動送信
+- **クイックナビ**　長いページでも目的のセクションにすぐ移動できるナビゲーション
+
+---
+
+## こだわった点
+
+### コンポーネントの共通化
+
+ドリンクページはトップ・ランチ・モーニングなど複数のページから参照されるため、Reactの強みであるコンポーネント化を活かし、ページ全体を他あの場所でも使い回せる設計にしました。
+
+### クライアントが気軽にページ更新できるコード設計
+
+個別のコンテンツIDではなくカテゴリーナンバーで表示先を管理することで、コードを書き直さずにCMS側の設定変更だけで柔軟に表示を切り替えられます。
+
+### バナー・モーダルのAPI節約設計
+
+microCMSの無料プランではAPI数に上限があるため、バナーとモーダルを同一グループに登録し、カテゴリーナンバーで表示先を振り分けています。1つのAPIで2種類のコンテンツを管理することで、制約の中でも柔軟な運用を実現しました。
+
+### UXを意識したバナー設計
+
+広告バナーはすぐ閉じられてしまうことを前提に、3秒以内に伝わるシンプルなデザインを心がけました。×ボタンで閉じられ、リロードすれば再表示される仕様にすることで、情報の届きやすさと操作のしやすさを両立しています。
+
+---
+
+## ページ構成
+
+```
+/               トップページ
+/news           お知らせ一覧
+/menu           メニュートップ
+/menu/limited   期間限定メニュー
+/menu/drink     ドリンク
+/menu/morning   モーニング
+/menu/lunch     ランチ
+/menu/dessert   デザート
+/recruit        採用情報
+```
+
+---
+
+## 制作背景
+
+卒業制作として制作しました。「作って終わり」ではなく、実際に運用され続けるサイトを意識し、クライアント（カフェスタッフ）が自分でコンテンツを更新できる仕組みづくりを最優先に設計しています。
